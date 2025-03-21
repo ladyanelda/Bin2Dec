@@ -1,0 +1,36 @@
+*, *::after, *::before {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(41, 50, 101), rgb(80, 90, 150));
+}
+
+.convertor-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(1, 300px); /* Single column for simplicity */
+    grid-template-rows: auto; /* Automatically adjust rows */
+    gap: 10px; /* Add spacing between grid items */
+    text-align: center;
+}
+
+.convertor-grid > button {
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.convertor-grid > button:hover {
+    background-color: beige;
+}
+
+.error {
+    color: red;
+}
