@@ -15,9 +15,9 @@ body {
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(1, 300px); /* Single column for simplicity */
-    grid-template-rows: auto; /* Automatically adjust rows */
-    gap: 10px; /* Add spacing between grid items */
+    grid-template-columns: repeat(1, 300px); 
+    grid-template-rows: auto;
+    gap: 10px;
     text-align: center;
 }
 
@@ -25,6 +25,9 @@ body {
     padding: 10px;
     font-size: 1rem;
     cursor: pointer;
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 5px;
 }
 
 .convertor-grid > button:hover {

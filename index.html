@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bin2Dec Converter</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="convertor-grid">
-    <h1>Bin2Dec Convertor</h1>
-    <p> Enter at most 8 binary digits(0 and 1) </p>
-    <input type="text" id="binaryInput" maxlength="8" placeholder="1010, 0000,11100111">
-    <button onclick="ConvertBin">Convert</button>
+        <h1>Bin2Dec Converter</h1>
+        <p>Enter at most 8 binary digits (0 and 1):</p>
+        <input type="text" id="binaryInput" maxlength="8" pattern="[01]+" placeholder="1010, 0000, 11100111">
+        <button onclick="convertBinary()">Convert</button>
 
-    <p id="errorMessage" class="error"></p>
-    <p>Decimal Equivalent: <span id="decimalOutput"></span></p>
+        <p id="errorMessage" class="error"></p>
+        <p>Decimal Equivalent: <span id="decimalOutput"></span></p>
     </div>
-
 </body>
 </html>

@@ -1,42 +1,29 @@
 function convertBinary() {
-    // Get the input value
-    const binaryInput = document.getElementById("binaryInput").value;
+    const binaryInput = document.getElementById("binaryInput").value.trim();
     const errorMessage = document.getElementById("errorMessage");
     const decimalOutput = document.getElementById("decimalOutput");
 
-    // Reset error message and output
+    // Reset previous messages
     errorMessage.textContent = "";
-    decimalOutput.textContent = "";
+    decimalOutput.textContent = ""; // Clears previous output
 
-    // Validate input
-    let isValid = true;
-
-    // Check length
+    // Check if input is empty or too long
     if (binaryInput.length < 1 || binaryInput.length > 8) {
-        isValid = false;
-    }
-
-    // Check each character
-    for (let i = 0; i < binaryInput.length; i++) {
-        if (binaryInput[i] !== '0' && binaryInput[i] !== "1") {
-            isValid = false;
-            break;
-        }
-    }
-
-    // Display error message if input is invalid
-    if (!isValid) {
-        errorMessage.textContent = "Invalid input! Please enter only 0s and 1s (max 8 digits).";
+        errorMessage.textContent = "Invalid input! Enter 1 to 8 binary digits.";
         return;
     }
 
-    // Convert binary to decimal
-    let decimal = 0;
+    // Validate input (check if only contains 0s and 1s)
     for (let i = 0; i < binaryInput.length; i++) {
-        const digit = parseInt(binaryInput[binaryInput.length - 1 - i]); // Start from the right
-        decimal += digit * Math.pow(2, i); // Calculate the value
+        if (binaryInput[i] !== '0' && binaryInput[i] !== '1') {
+            errorMessage.textContent = "Invalid input! Please enter only 0s and 1s.";
+            return;
+        }
     }
 
-    // Display the result
+    // Convert binary to decimal using parseInt()
+    const decimal = parseInt(binaryInput, 2);
+
+    // ✅ Display the result inside the span
     decimalOutput.textContent = decimal;
 }
